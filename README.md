@@ -2,6 +2,7 @@
 
 ## Vision
 
+'''plain
 ============================= HTTP =======================      
 |  Static Web Server |  --------------->  |  Backend API |
 |       (Nginx)      |  <---------------  |    (Python)  |
