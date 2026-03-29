@@ -16,7 +16,7 @@
          |-----browser
 ```
 ## Proposal
-```text
+```
 An app built using two images, node and redis alpine, that keeps track of the number of page visits.
 The two containers in the docker network communicate using TCP.
 ```
