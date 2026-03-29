@@ -1,6 +1,5 @@
 {
   "name": "visitor-counter",
-  "version": "1.0.0",
   "description": "visitor counter web app that uses Node.js and Redis",
   "main": "app.js",
   "scripts": {
