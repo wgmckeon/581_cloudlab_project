@@ -1,25 +1,22 @@
-# 581_cloudlab_project
+# 581_cloudlab_project: Page View Counter
 
 ## Vision
-
 ```text
-============================= HTTP =======================      
-|  Static Web Server |  --------------->  |  Backend API |
-|       (Nginx)      |  <---------------  |    (Python)  |
-==========================================================
+---------------------------------------
+|            Docker network           |
+|   -----------         -----------   |
+|   | node.js |         |  alpine |   |
+|   |  (web)  |---tcp---| (redis) |   |
+|   |port 8080|         |port 6379|   |
+|   -----|-----         -----------   |
+|   container 1         container 2   |
+|        |                            |
+---------|-----------------------------
+         |HTTP (port 8080)
+         |-----browser
 ```
 ## Proposal
-
 ```text
-This project will consist of two Docker containers,
-deployed on CloudLab.
-
-The frontend will use an Nginx image to serve HTML
-and JavaScript content.
-
-The backend will use a Python based Docker image.
-
-It will implement a REST API. The API will handle
-requests from the frontend and return JSON responses
-over HTTP.
+An app built using two images, node and redis alpine, that keeps track of the number of page visits.
+The two containers in the docker network communicate using TCP.
 ```
