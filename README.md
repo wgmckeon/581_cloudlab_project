@@ -16,10 +16,10 @@
          |-----browser
 ```
 ## Proposal
-```
+
 An app built using two images, node.js and redis alpine, that keeps track of the number of page visits.
 The two containers in the docker network communicate using TCP.
-```
+
 
 ## Build Process
 ### Dockerfile
@@ -49,14 +49,14 @@ CMD ["node", "app.js"]
 ~~~
 
 ### Base Image Selection
-~~~
+
 The official Node.js (node:24) image was selected as the base because it is designed to be used as the foundation for web applications, and it also allows for front and backend work to both be done in javascript. Node.js is also very lightweight, so it can handle processing multiple requests simultaniously without delay which is invaluable for real time applications. node:24 in particular was selected because it's the latest stable release.
-~~~
+
 
 ### Networking
-~~~
+
 Both containers are attached to a docker bridge network called docker-counter. A bridge network allows for the two containers to communicate with each other without using IP addresses, since IP addresses reset every time either container restarts. The bridge network supports automatic DNS resolution between containers, meaning it gives each container a set name which allows Node.js Express and Redis Alpine to easily communicate within docker-counter. Bridge networks are also internal and private, the containers can only interact with each other and are not exposed to any other information outside of the bridge network. 
-~~~
+
 
 
 
