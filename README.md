@@ -21,36 +21,31 @@ An app built using two images, node.js and redis alpine, that keeps track of the
 The two containers in the docker network communicate using TCP.
 ```
 
-## Dockerfile
+## Build Process
+### Dockerfile
 ~~~
 //sets the base image, Node.js
 FROM node:24
-
 ~~~
 ~~~
 //creates the /app folder where all other commands will be executed
 WORKDIR /app
-
 ~~~
 ~~~
-//
+//copies package.json into /app
+COPY package.json
+~~~
+~~~
+//reads package.json to download Express and Redis
 RUN npm install
-
 ~~~
 ~~~
-//
+//copies project files into /app
 COPY . .
-
 ~~~
 ~~~
-//
-EXPOSE 8080
-
-~~~
-~~~
-//
+//docker command to set node app.js as PID 1
 CMD ["node", "app.js"]
-
 ~~~
 
 
