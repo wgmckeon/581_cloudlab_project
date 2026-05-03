@@ -87,13 +87,25 @@ docker compose version
 ssh <cloudlab-username>@<cloudlab-node-address>
 ```
 
-2. Clone the repository
+2. Clone the repository and enter the directory:
 ```
-git clone 
+git clone https://github.com/wgmckeon/visitor-counter.git
+cd visitor-counter
 ```
-3. 
+3. Build and start containers:
+```
+docker compose up
+```
+4. In your console you should see:
+```
+Server running on http://<cloudlab-node-address>:8080
+```
+5. Open a browser and navigate to `http://<cloudlab-node-address>:8080,` replacing `<cloudlab-node-address>` with the address used to SSH into your experiment
 
-
+6. When done, run:
+```
+docker compose down
+```
 
 
 
