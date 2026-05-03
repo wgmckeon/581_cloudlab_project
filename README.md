@@ -23,11 +23,11 @@ The two containers are on a private Docker bridge network. The web container exp
 ### Base Image Selection
 
 
-| `node:24` |
+ `node:24` 
 
 The official Node.js (node:24) image was selected as the base because it is designed to be used as the foundation for web applications, and it allows for front and backend work to both be done in javascript. Node.js is also very lightweight, so it can handle processing multiple requests simultaniously without delay which is invaluable for real time applications. node:24 in particular was selected because it's the latest stable release.
 
-| `redis:7-alpine` | 
+ `redis:7-alpine` 
 
 The official Redis image on Alpine Linux is a small and efficient image which is perfect for handling simple value storage. It does not need any modifications beyond the default Redis configuration, making it simple and easy to use for this application.  
 
